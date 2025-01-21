@@ -135,4 +135,23 @@ class WeatherDataFetcher:
             "message": "Data is not available"}
 
 if __name__ == "__main__":
-    pass
+# Prompt user for city name
+    city = input("Enter city name: ")
+
+    # Initialize weather data fetcher
+    weather_fetcher = WeatherDataFetcher()
+
+    # Fetch weather data
+    status_code = weather_fetcher.get_weather(city)
+    
+    print(f"Weather data for {city}:")
+    
+    # Print the results
+    print("Temperature:", weather_fetcher.temprature())
+    print("Wind Speed:", weather_fetcher.wind_speed())
+    print("Humidity:", weather_fetcher.humidity())
+    print("Weather Description:", weather_fetcher.weather_description())
+    print("Sunrise & Sunset:", weather_fetcher.sunrise_sunset())
+    print("Visibility:", weather_fetcher.visibility())
+    print("Pressure:", weather_fetcher.pressure())
+    print("Location Info:", weather_fetcher.location_info())
